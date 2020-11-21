@@ -1,0 +1,118 @@
+@font-face {
+   font-family: "Montserrat";
+
+   src: url("/fonts/Montserrat/Montserrat-Regular.ttf");
+   src: url("/fonts/Montserrat/Montserrat-Bold.ttf");
+   src: url("/fonts/Montserrat/Montserrat-Medium.ttf");
+}
+
+body {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: "Montserrat", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+button {
+   margin: 0;
+   padding: 0;
+}
+
+ul,
+li {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+button {
+   outline: none;
+}
+a {
+   text-decoration: none;
+   color: #fff;
+}
+
+.container {
+   max-width: 1280px;
+   margin: 0 auto;
+}
+
+.link a {
+   transition: 0.2s ease-in-out;
+   &:hover {
+      border-bottom: 2px solid #6ebbd3;
+      padding-bottom: 5px;
+   }
+   &:active {
+      color: #6ebbd3;
+   }
+}
+
+.button {
+   width: 100%;
+   margin-top: 26px;
+   padding: 21px 71px;
+   background-color: #6ebbd3;
+   color: #fff;
+   outline: none;
+   border-radius: 10px;
+   border: none;
+   font-weight: bold;
+   transition: 0.2s ease-in-out;
+   cursor: pointer;
+   &:hover {
+      background-color: darken(#6ebbd3, 10%);
+   }
+   &:active {
+      background-color: darken(#6ebbd3, 15%);
+   }
+}
+
+.scroll-up {
+   position: fixed;
+   bottom: 80px;
+   right: 80px;
+   z-index: 9999;
+   padding: 20px;
+   background-color: #6ebbd3;
+   cursor: pointer;
+   display: none;
+   &:hover {
+      background-color: darken(#6ebbd3, 10%);
+   }
+   &:active {
+      background-color: darken(#6ebbd3, 15%);
+   }
+}
+.scroll-up-show {
+   display: block;
+}
+
+@import "_header.scss";
+@import "_main.scss";
+@import "_footer.scss";
+
+@media (max-width: 1340px) {
+   .container {
+      max-width: 1220px;
+      padding: 0 40px;
+   }
+}
+@media (max-width: 860px) {
+   .scroll-up {
+      right: 40px;
+   }
+}
+@media (max-width: 355px) {
+   .scroll-up {
+      padding: 12px;
+      right: 40px;
+   }
+}

@@ -1,0 +1,268 @@
+.header {
+   padding-top: 40px;
+   background-image: url("../img/header/bgc-header.jpg");
+   background-repeat: no-repeat;
+   background-size: auto;
+   background-position: bottom;
+   position: relative;
+   z-index: 1;
+   &:after {
+      content: "";
+      position: absolute;
+      background: rgba(31, 32, 33, 0.79);
+      width: 100%;
+      height: 100%;
+      top: 0;
+      z-index: -1;
+   }
+
+   &__logoBlock {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+
+      &-menu {
+         display: flex;
+         .logoBlock__link {
+            padding: 0 7px;
+            & a {
+               margin-right: 80px;
+            }
+         }
+      }
+      &-phone {
+         .phoneBlock {
+            &__number {
+               font-weight: bold;
+               font-size: 22px;
+               transition: 0.2s ease-in-out;
+               &:hover {
+                  color: #6ebbd3;
+               }
+               &:active {
+                  color: #6ebbd3;
+               }
+            }
+            &__text {
+               margin-top: 7px;
+               font-size: 18px;
+               text-align: right;
+            }
+         }
+      }
+      &-burger {
+         display: none;
+         .menu__btn {
+            position: fixed;
+            align-items: center;
+            top: 65px;
+            right: 50px;
+
+            width: 30px;
+            height: 30px;
+
+            cursor: pointer;
+            z-index: 1;
+            display: none;
+            &:before {
+               content: "";
+               position: absolute;
+               padding: 20px 20px;
+               background-color: #fff;
+               border-radius: 50px;
+               width: 20px;
+               height: 20px;
+               right: -15px;
+               bottom: 0;
+            }
+         }
+
+         .menu__btn > span,
+         .menu__btn > span::before,
+         .menu__btn > span::after {
+            display: block;
+            position: absolute;
+
+            width: 100%;
+            height: 2px;
+
+            background-color: rgb(0, 0, 0);
+
+            transition-duration: 0.25s;
+         }
+         .menu__btn > span::before {
+            content: "";
+            top: -8px;
+         }
+         .menu__btn > span::after {
+            content: "";
+            top: 8px;
+         }
+
+         .menu__box {
+            display: block;
+            position: fixed;
+            visibility: hidden;
+            top: 0;
+            right: -300px;
+
+            width: 300px;
+            height: 100%;
+
+            margin: 0;
+            padding: 80px 0;
+
+            list-style: none;
+
+            background-color: #1c1c1d;
+
+            transition-duration: 0.25s;
+         }
+
+         .menu__item {
+            display: block;
+            padding: 12px 24px;
+
+            color: #fff;
+
+            font-size: 20px;
+            font-weight: 600;
+
+            text-decoration: none;
+
+            transition-duration: 0.25s;
+         }
+         .menu__item:hover {
+            background-color: #6ebbd3;
+         }
+
+         #menu__toggle {
+            display: none;
+            opacity: 0;
+         }
+
+         #menu__toggle:checked ~ .menu__btn > span {
+            transform: rotate(45deg);
+         }
+         #menu__toggle:checked ~ .menu__btn > span::before {
+            top: 0;
+            transform: rotate(0);
+         }
+         #menu__toggle:checked ~ .menu__btn > span::after {
+            top: 0;
+            transform: rotate(90deg);
+         }
+         #menu__toggle:checked ~ .menu__box {
+            visibility: visible;
+            right: -80px;
+         }
+      }
+   }
+   &__titleBlock {
+      margin-top: 50px;
+      padding-bottom: 40px;
+
+      &-text {
+         color: #fff;
+         font-weight: bold;
+         font-size: 38px;
+      }
+   }
+}
+
+@media (max-width: 1040px) {
+   .phoneBlock {
+      &__number {
+         font-size: 20px !important;
+      }
+   }
+   .logoBlock__link {
+      margin-left: 40px;
+      & a {
+         margin-right: 40px !important;
+      }
+   }
+}
+
+@media (max-width: 955px) {
+   .phoneBlock {
+      &__number {
+         font-size: 17px !important;
+      }
+   }
+   .logoBlock__link {
+      margin-left: 25px;
+      & a {
+         margin-right: 25px !important;
+      }
+   }
+}
+
+@media (max-width: 768px) {
+   .header {
+      background-position: 0px;
+   }
+   .phoneBlock__text {
+      text-align: center !important;
+      font-size: 16px !important;
+   }
+   .header__logoBlock-menu {
+      display: none;
+   }
+   .header__logoBlock-burger {
+      display: block;
+   }
+   .header__titleBlock {
+      display: flex;
+      justify-content: space-between;
+   }
+   .menu__btn {
+      display: block !important;
+   }
+}
+
+@media (max-width: 475px) {
+   .header {
+      background-position: -400px;
+      background-size: cover;
+      padding-top: 0px !important;
+      &:after {
+         padding-top: 0px !important;
+      }
+   }
+   .header__logoBlock {
+      padding-top: 40px;
+      flex-direction: column;
+   }
+   .header__titleBlock {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      &-text {
+         font-size: 26px;
+      }
+   }
+   .phoneBlock {
+      margin-top: 40px;
+   }
+}
+
+@media (max-width: 355px) {
+   .header {
+      background-position: -450px;
+   }
+   .header__titleBlock {
+      &-text {
+         font-size: 22px;
+      }
+   }
+   .menu__btn {
+      width: 24px !important;
+      height: 24px !important;
+      &:before {
+         padding: 16px !important;
+         height: 16px !important;
+      }
+   }
+}
