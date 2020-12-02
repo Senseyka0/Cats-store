@@ -110,7 +110,7 @@ a {
   padding-top: 40px;
   background-image: url("../img/header/bgc-header.jpg");
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: 1800px;
   background-position: bottom;
   position: relative;
   z-index: 1;
@@ -296,6 +296,9 @@ a {
 }
 
 @media (max-width: 1040px) {
+  .header {
+    background-size: auto;
+  }
   .phoneBlock__number {
     font-size: 20px !important;
   }
@@ -874,4 +877,3 @@ a {
     right: 40px;
   }
 }
-/*# sourceMappingURL=style.css.map */
